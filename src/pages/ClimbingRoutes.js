@@ -22,40 +22,66 @@ export default function ClimbingRoutes() {
                 flashes: 10,
                 sends: 67,
                 img: ''
+            },
+
+            {
+                id: 2,
+                grade: 'V3',
+                name: '',
+                setter: 'John Doe',
+                flashes: 10,
+                sends: 67,
+                img: ''
+            },
+
+            {
+                id: 3,
+                grade: 'V3',
+                name: '',
+                setter: 'John Doe',
+                flashes: 10,
+                sends: 67,
+                img: ''
+            },
+
+            {
+                id: 4,
+                grade: 'V3',
+                name: '',
+                setter: 'John Doe',
+                flashes: 10,
+                sends: 67,
+                img: ''
+            },
+
+            {
+                id: 5,
+                grade: 'V3',
+                name: '',
+                setter: 'John Doe',
+                flashes: 10,
+                sends: 67,
+                img: ''
             }
         ]
     );
 
     return (
-        <div className='flex flex-wrap'>
-            <ClimbingRoute 
-                name='Blue devil'
-                grade='V3'
-                setter='John'
-                flashes='27'
-                sends='100'
-            />
-            <ClimbingRoute 
-                name='baba'
-                grade='V3'
-                setter='John'
-                flashes='27'
-                sends='100'
-            />
-            <ClimbingRoute 
-                name='baba'
-                grade='V3'
-                setter='John'
-                flashes='27'
-                sends='100'
-            />
-            <ClimbingRoute 
-                name='baba'
-                grade='V3'
-                setter='John'
-                flashes='27'
-                sends='100'
-            />
+        <div className='flex flex-wrap justify-center '>
+            {listRoutes.map((r) => {
+                return (
+                <ClimbingRoute
+                    key={r.id}
+                    id={r.id}
+                    name={r.name}
+                    grade={r.grade}
+                    setter={r.setter}
+                    flashes={r.flashes}
+                    sends={r.sends}
+                    img={r.img}
+                />
+                );
+            })}
         </div>
     )
 }

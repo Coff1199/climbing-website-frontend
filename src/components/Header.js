@@ -91,7 +91,6 @@ export default function Header(props) {
               ))}
             </div>
           </Disclosure.Panel>
-          <footer>Example</footer>
         </>
       )}
     </Disclosure>
@@ -100,6 +99,7 @@ export default function Header(props) {
             {props.children}
         </div>
     </div>
+    <footer>Example</footer>
     </>
   )
 }

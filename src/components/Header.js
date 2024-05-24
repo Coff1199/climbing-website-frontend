@@ -99,7 +99,7 @@ export default function Header(props) {
             {props.children}
         </div>
     </div>
-    <footer>Example</footer>
+    <footer>Footer</footer>
     </>
   )
 }

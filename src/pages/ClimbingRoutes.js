@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ClimbingRoute from "../components/ClimbingRoute";
+import AddRoute from "../components/AddRoute";
 
 export default function ClimbingRoutes() {
     const [listRoutes, setListRoutes] = useState(
@@ -66,6 +67,19 @@ export default function ClimbingRoutes() {
         ]
     );
 
+    function newRoute(name, grade, setter, img) {
+        const newRoute = {
+          id: listRoutes[listRoutes.length-1]+1,
+          name: name,
+          grade: grade,
+          setter: setter,
+          flashes: 0,
+          send: 0,
+          img: img
+        }
+        setListRoutes([...listRoutes, newRoute]);
+      }
+
     return (
         <div className='flex flex-wrap justify-center '>
             {listRoutes.map((r) => {
@@ -82,6 +96,7 @@ export default function ClimbingRoutes() {
                 />
                 );
             })}
+            <AddRoute newRoute={newRoute} />
         </div>
     )
 }

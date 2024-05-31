@@ -2,6 +2,7 @@ import { useState } from "react";
 import ClimbingRoute from "../components/ClimbingRoute";
 import AddRoute from "../components/AddRoute";
 import EditRouteData from "../components/EditRouteData";
+import AddData from "../components/AddData";
 
 export default function ClimbingRoutes() {
     const [listRoutes, setListRoutes] = useState(
@@ -92,6 +93,19 @@ export default function ClimbingRoutes() {
         setListRoutes(updatedListRoutes);
       }
 
+      function updateData(id, flashes, sends) {
+        const updatedListRoutes = listRoutes.map((route) => {
+            if (id === route.id) {
+                if (Number(flashes) > 0 && Number(sends) > 0) {
+                    return { ...route, flashes: Number(route.flashes) + Number(flashes), sends: Number(route.sends) + Number(sends)};
+                }
+            }
+            return route;
+          }
+        );
+        setListRoutes(updatedListRoutes);
+      }
+
     return (
         <div className='flex flex-wrap justify-center '>
             {listRoutes.map((r) => {
@@ -101,6 +115,12 @@ export default function ClimbingRoutes() {
                 grade={r.grade}
                 setter={r.setter}
                 updateRoute={updateRoute}
+              />
+              const addData = <AddData
+                id={r.id}
+                sends={r.name}
+                flashes={r.grade}
+                updateData={updateData}
               />
                 return (
                 <ClimbingRoute
@@ -113,6 +133,7 @@ export default function ClimbingRoutes() {
                     sends={r.sends}
                     img={r.img}
                     editRouteData = {editRouteData}
+                    addData = {addData}
                 />
                 );
             })}

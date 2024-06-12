@@ -10,21 +10,17 @@ const navigation = [
   { name: 'Calendar', href: '/other2' },
 ]
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
-
 export default function Header(props) {
   return (
     <>
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-green-800">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-            <div className="relative flex h-14 items-center justify-between">
+            <div className="relative flex h-10 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-600 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -50,8 +46,8 @@ export default function Header(props) {
                         className={({isActive}) => {
                             return 'px-3 py-2 text-sm font-medium no-underline ' + 
                             (!isActive 
-                                ? 'text-gray-300 hover:bg-gray-700 hover:text-white' 
-                                : 'bg-gray-900 text-white');
+                                ? 'text-gray-300 hover:bg-green-700 hover:text-white' 
+                                : 'bg-green-900 text-white');
                         }}
                       >
                         {item.name}
@@ -82,7 +78,7 @@ export default function Header(props) {
                     className={({isActive}) => {
                         return 'block rounded-md px-3 py-2 text-base font-medium no-underline' + 
                         (!isActive 
-                            ? 'text-gray-300 hover:bg-gray-700 hover:text-white' 
+                            ? 'text-gray-100 hover:bg-gray-700 hover:text-white' 
                             : 'bg-gray-900 text-white');
                     }}
                 >
@@ -94,8 +90,11 @@ export default function Header(props) {
         </>
       )}
     </Disclosure>
-    <div className = "bg-gray-300">
-        <div className='max-w-7xl mx-auto bg-gray-300 min-h-screen p-2'>
+    <div className="bg-black h-1 mx-auto  max-w-7xl min-w-screen">
+
+    </div>
+    <div className = "bg-black">
+        <div className='max-w-7xl mx-auto bg-gray-100 min-h-screen p-2'>
             {props.children}
         </div>
     </div>

@@ -16,7 +16,7 @@ function EditRouteData(props) {
         <>
             <button 
                 onClick={handleShow} 
-                class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-300 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">
+                class="px-4 py-1 text-sm text-green-700 font-semibold rounded-full border border-purple-300 hover:text-white hover:bg-green-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">
                 Edit Route Data
             </button>
 
@@ -101,7 +101,7 @@ function EditRouteData(props) {
                 Close
             </button>
             <button 
-                className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded" 
+                className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" 
                 form='editmodal'
                 onClick={handleClose}
             >

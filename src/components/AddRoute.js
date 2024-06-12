@@ -16,7 +16,7 @@ function AddRoute(props) {
         <>
             <button 
                 onClick={handleShow} 
-                class="mx-auto block m-2 bg-purple-400 hover:bg-slate-500 text-white font-bold py-2 px-4 rounded">
+                className="mx-auto block m-2 bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                 + Add Route
             </button>
 
@@ -45,7 +45,7 @@ function AddRoute(props) {
                             </label>
                         </div>
                         <div className="md:w-2/3">
-                            <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
+                            <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500" 
                                 id="name" 
                                 placeholder="Route1"
                                 type="text" 
@@ -63,7 +63,7 @@ function AddRoute(props) {
                         </label>
                         </div>
                         <div className="md:w-2/3">
-                            <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
+                            <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500" 
                                 id="grade"
                                 type="text"
                                 placeholder="V0"
@@ -81,7 +81,7 @@ function AddRoute(props) {
                         </label>
                         </div>
                         <div className="md:w-2/3">
-                            <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
+                            <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500" 
                                 id="setter" 
                                 type="text"
                                 placeholder="John Smith"
@@ -99,7 +99,7 @@ function AddRoute(props) {
                         </label>
                         </div>
                         <div className="md:w-2/3">
-                            <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" 
+                            <input className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500" 
                                 id="img" 
                                 placeholder="www.google.com"
                                 type="text"
@@ -120,7 +120,7 @@ function AddRoute(props) {
                 Close
             </button>
             <button 
-                className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded" 
+                className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" 
                 form='editmodal'
                 onClick={handleClose}
             >

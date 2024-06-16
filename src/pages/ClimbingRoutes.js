@@ -96,7 +96,7 @@ export default function ClimbingRoutes() {
       function updateData(id, flashes, sends) {
         const updatedListRoutes = listRoutes.map((route) => {
             if (id === route.id) {
-                if (Number(flashes) > 0 && Number(sends) > 0) {
+                if (Number(flashes) >= 0 && Number(sends) >= 0) {
                     return { ...route, flashes: Number(route.flashes) + Number(flashes), sends: Number(route.sends) + Number(sends)};
                 }
             }

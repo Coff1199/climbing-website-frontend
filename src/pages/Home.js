@@ -1,32 +1,22 @@
-
+import ImageWindow from "../components/ImageWindow";
 
 export default function Home() {
     return (
-        <div className="flex flex-wrap max-w-sm rounded overflow-hidden shadow-lg">
-            <img
-                className="w-full" 
+        <>              
+            <ImageWindow 
                 src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Chogori.jpg"
                 alt="K2's brutal east face"
+                title="Beauty"
+                text="A fortitude of human strength"
+                tags={["strength", "drive", "power"]}
             />
-            <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">
-                    Laughing in the face of fear
-                </div>
-                <p className="text-gray-700 text-base">
-                    I used to be afraid of heights but now I'm too far up to go back down.
-                </p>
-            </div>
-            <div className="px-6 pt-4 pb-2">
-                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                    #climbing
-                </span>
-                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                    #heights
-                </span>
-                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                    #encouragement
-                </span>
-            </div>
-        </div>
+            <ImageWindow 
+                src="https://www.switchbacktravel.com/sites/default/files/images/articles/Annapurna%20Sanctuary%20Trek%20Nepal.JPG"
+                alt="Annapura's haunting visage"
+                title="Life on the Edge"
+                text="A homage to mortality"
+                tags={["life", "death"]}
+            />
+        </>
     );
 }

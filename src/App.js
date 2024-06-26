@@ -9,9 +9,9 @@ function App() {
     <BrowserRouter>
       <Header>
         <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path='/home' element={<Home />} />
-        <Route path='/climbing-routes' element={<ClimbingRoutes />} />
+          <Route path="/" element={<Home />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/climbing-routes' element={<ClimbingRoutes />} />
         </Routes>
       </Header>
     </BrowserRouter>

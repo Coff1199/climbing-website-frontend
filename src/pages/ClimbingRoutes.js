@@ -71,7 +71,7 @@ export default function ClimbingRoutes() {
 
     function newRoute(name, grade, setter, img) {
         const newRoute = {
-          id: listRoutes[listRoutes.length-1]+1,
+          id: listRoutes[listRoutes.length-1].id+1,
           name: name,
           grade: grade,
           setter: setter,

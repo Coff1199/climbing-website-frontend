@@ -1,7 +1,7 @@
 export default function FooterForm(props) {
     return (
         <>
-        <div className="bg-gray-300 py-1 flex flex-col justify-center">
+        <div className="bg-gray-300 py-5 flex flex-col justify-center">
             <form id="contact-form" onSubmit={(info) => {
                 console.log(info)
             }}>
@@ -32,7 +32,7 @@ export default function FooterForm(props) {
                             <input 
                                 className="bg-gray-200 appearance-none border-2 border-gray-200 rounded max-w-25 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500"
                                 id="email" 
-                                type="text" 
+                                type="email" 
                                 placeholder="john.doe1234@gmail.com"
                             />
                         </div>
@@ -44,7 +44,7 @@ export default function FooterForm(props) {
                                 Questions/Suggestions 
                             </label>
                             <input 
-                                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded max-w-25 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500 h-10"
+                                className="bg-gray-200 appearance-none border-2 border-gray-200 rounded max-w-25 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500 h-20"
                                 id="suggestion-box" 
                                 type="text" 
                             />

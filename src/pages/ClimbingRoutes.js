@@ -76,7 +76,7 @@ export default function ClimbingRoutes() {
           grade: grade,
           setter: setter,
           flashes: 0,
-          send: 0,
+          sends: 0,
           img: img
         }
         setListRoutes([...listRoutes, newRoute]);

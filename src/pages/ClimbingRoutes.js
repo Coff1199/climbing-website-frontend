@@ -1,86 +1,42 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ClimbingRoute from "../components/ClimbingRoute";
 import AddRoute from "../components/AddRoute";
 import EditRouteData from "../components/EditRouteData";
 import AddData from "../components/AddData";
 
 export default function ClimbingRoutes() {
-    const [listRoutes, setListRoutes] = useState(
-        [
-            {
-                id: 0,
-                grade: 'V4',
-                name: '',
-                setter: 'John Doe',
-                flashes: 2,
-                sends: 30,
-                img: ''
-            },
+    const [listRoutes, setListRoutes] = useState([])
 
-            {
-                id: 1,
-                grade: 'V3',
-                name: '',
-                setter: 'John Doe',
-                flashes: 10,
-                sends: 67,
-                img: ''
-            },
-
-            {
-                id: 2,
-                grade: 'V3',
-                name: '',
-                setter: 'John Doe',
-                flashes: 10,
-                sends: 67,
-                img: ''
-            },
-
-            {
-                id: 3,
-                grade: 'V3',
-                name: '',
-                setter: 'John Doe',
-                flashes: 10,
-                sends: 67,
-                img: ''
-            },
-
-            {
-                id: 4,
-                grade: 'V3',
-                name: '',
-                setter: 'John Doe',
-                flashes: 10,
-                sends: 67,
-                img: ''
-            },
-
-            {
-                id: 5,
-                grade: 'V3',
-                name: '',
-                setter: 'John Doe',
-                flashes: 10,
-                sends: 67,
-                img: ''
-            }
-        ]
-    );
-
-    function newRoute(name, grade, setter, img) {
+    function newRoute(name, grade, setter) {
         const newRoute = {
-          id: listRoutes[listRoutes.length-1].id+1,
           name: name,
           grade: grade,
           setter: setter,
           flashes: 0,
           sends: 0,
-          img: img
         }
+        fetch('http://127.0.0.1:4000/api/v1/climbing-routes', {
+          method: 'POST',
+          headers: { "Content-Type": "application/json"},
+          body: JSON.stringify(newRoute)
+        }).then(() => {
+          console.log("New Route Added");
+        })
         setListRoutes([...listRoutes, newRoute]);
       }
+
+      useEffect(() => {
+        fetch('http://127.0.0.1:4000/api/v1/climbing-routes')
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          setListRoutes(Array.from(data.data.climbingRoutes))
+        })
+        .catch((e) => {
+
+        })
+      }, [])
 
       function updateRoute(id, newName, newGrade, newSetter) {
         const updatedListRoutes = listRoutes.map((route) => {
@@ -131,7 +87,6 @@ export default function ClimbingRoutes() {
                     setter={r.setter}
                     flashes={r.flashes}
                     sends={r.sends}
-                    img={r.img}
                     editRouteData = {editRouteData}
                     addData = {addData}
                 />

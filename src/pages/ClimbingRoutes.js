@@ -39,8 +39,7 @@ export default function ClimbingRoutes() {
       }, [])
 
       function updateRoute(id, newName, newGrade, newSetter) {
-        console.log(id, newName, newGrade, newSetter)
-        fetch('http://127.0.0.1:4000/api/v1/climbing-routes/'+id, {
+        fetch('http://127.0.0.1:4000/api/v1/climbing-routes/' + id, {
           method: 'PATCH',
           headers: { "Content-Type": "application/json"},
           body: JSON.stringify({name:newName, setter:newSetter, grade:newGrade})
@@ -59,6 +58,13 @@ export default function ClimbingRoutes() {
       }
 
       function updateData(id, flashes, sends) {
+        fetch('http://127.0.0.1:4000/api/v1/climbing-routes/' + id, {
+          method: 'PATCH',
+          headers: { "Content-Type": "application/json"},
+          body: JSON.stringify({flashes:Number(flashes), sends: Number(sends)})
+        }).then(() => {
+          console.log("Route with id "+ id + " edited");
+        })
         const updatedListRoutes = listRoutes.map((route) => {
             if (id === route._id) {
                 if (Number(flashes) >= 0 && Number(sends) >= 0) {

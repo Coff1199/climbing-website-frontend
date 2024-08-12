@@ -3,9 +3,9 @@ import Modal from 'react-bootstrap/Modal';
 
 function EditRouteData(props) {
     const id  = props.id;
-    const [name, setName] = useState('');
-    const [grade, setGrade] = useState('');
-    const [setter, setSetter] = useState('');
+    const [name, setName] = useState(props.name);
+    const [grade, setGrade] = useState(props.grade);
+    const [setter, setSetter] = useState(props.setter);
 
     const [show, setShow] = useState(false);
 
@@ -16,7 +16,7 @@ function EditRouteData(props) {
         <>
             <button 
                 onClick={handleShow} 
-                class="px-4 py-1 text-sm text-green-700 font-semibold rounded-full border border-purple-300 hover:text-white hover:bg-green-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">
+                className="px-4 py-1 text-sm text-green-700 font-semibold rounded-full border border-purple-300 hover:text-white hover:bg-green-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">
                 Edit Route Data
             </button>
 

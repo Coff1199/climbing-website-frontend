@@ -15,7 +15,7 @@ export default function AddData(props) {
         <>
             <button 
                 onClick={handleShow} 
-                class="px-4 py-1 text-sm text-green-700 font-semibold rounded-full border border-green-300 hover:text-white hover:bg-green-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2">
+                className="px-4 py-1 text-sm text-green-700 font-semibold rounded-full border border-green-300 hover:text-white hover:bg-green-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2">
                 Add Data
             </button>
 

@@ -39,8 +39,17 @@ export default function ClimbingRoutes() {
       }, [])
 
       function updateRoute(id, newName, newGrade, newSetter) {
+        console.log(id, newName, newGrade, newSetter)
+        fetch('http://127.0.0.1:4000/api/v1/climbing-routes/'+id, {
+          method: 'PATCH',
+          headers: { "Content-Type": "application/json"},
+          body: JSON.stringify({name:newName, setter:newSetter, grade:newGrade})
+        }).then(() => {
+          console.log("Route with id "+ id + " edited");
+        })
+
         const updatedListRoutes = listRoutes.map((route) => {
-            if (id === route.id) {
+            if (id === route._id) {
               return { ...route, name: newName, setter: newSetter, grade: newGrade };
             }
             return route;
@@ -51,7 +60,7 @@ export default function ClimbingRoutes() {
 
       function updateData(id, flashes, sends) {
         const updatedListRoutes = listRoutes.map((route) => {
-            if (id === route.id) {
+            if (id === route._id) {
                 if (Number(flashes) >= 0 && Number(sends) >= 0) {
                     return { ...route, flashes: Number(route.flashes) + Number(flashes), sends: Number(route.sends) + Number(sends)};
                 }
@@ -65,23 +74,23 @@ export default function ClimbingRoutes() {
     return (
         <div className='flex flex-wrap justify-center '>
             {listRoutes.map((r) => {
-                const editRouteData = <EditRouteData
-                id={r.id}
+              const editRouteData = <EditRouteData
+                id={r._id}
                 name={r.name}
                 grade={r.grade}
                 setter={r.setter}
                 updateRoute={updateRoute}
               />
               const addData = <AddData
-                id={r.id}
+                id={r._id}
                 sends={r.name}
                 flashes={r.grade}
                 updateData={updateData}
               />
                 return (
                 <ClimbingRoute
-                    key={r.id}
-                    id={r.id}
+                    key={r._id}
+                    id={r._id}
                     name={r.name}
                     grade={r.grade}
                     setter={r.setter}

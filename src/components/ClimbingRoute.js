@@ -21,6 +21,7 @@ function ClimbingRoute(props) {
                 </div>
                 {props.editRouteData}
                 {props.addData}
+                {props.deleteRoute}
             </div>
         </div>
     );

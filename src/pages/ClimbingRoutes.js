@@ -3,6 +3,7 @@ import ClimbingRoute from "../components/ClimbingRoute";
 import AddRoute from "../components/AddRoute";
 import EditRouteData from "../components/EditRouteData";
 import AddData from "../components/AddData";
+import DeleteRoute from "../components/DeleteRoute"
 
 export default function ClimbingRoutes() {
     const [listRoutes, setListRoutes] = useState([])
@@ -77,6 +78,23 @@ export default function ClimbingRoutes() {
         setListRoutes(updatedListRoutes);
       }
 
+      function deleteRouteData(id, flashes, sends) {
+        fetch('http://127.0.0.1:4000/api/v1/climbing-routes/' + id, {
+          method: 'DELETE',
+        }).then(() => {
+          console.log("Route with id "+ id + " deleted");
+        })
+        const newListRoutes = []
+        listRoutes.map((route) => {
+            if (id !== route._id) {
+                newListRoutes.push(route);
+            }
+            return route;
+          }
+        );
+        setListRoutes(newListRoutes);
+      }
+
     return (
         <div className='flex flex-wrap justify-center '>
             {listRoutes.map((r) => {
@@ -93,6 +111,10 @@ export default function ClimbingRoutes() {
                 flashes={r.grade}
                 updateData={updateData}
               />
+              const deleteRoute = <DeleteRoute
+                id={r._id}
+                deleteRouteData = {deleteRouteData}
+              />
                 return (
                 <ClimbingRoute
                     key={r._id}
@@ -104,6 +126,7 @@ export default function ClimbingRoutes() {
                     sends={r.sends}
                     editRouteData = {editRouteData}
                     addData = {addData}
+                    deleteRoute = {deleteRoute}
                 />
                 );
             })}

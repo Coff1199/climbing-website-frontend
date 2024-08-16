@@ -10,7 +10,6 @@ export default function FooterForm() {
         <div className="bg-gray-300 py-5 flex flex-col justify-center">
             <form id="suggestion-form" onSubmit={(e) => {
                 e.preventDefault();
-                console.log(apiUrl);
                 fetch(apiUrl+'/api/v1/form-data', {
                     method:"POST",
                     headers: { "Content-Type": "application/json"},

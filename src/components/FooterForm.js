@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState } from "react";
+const apiUrl = process.env.REACT_APP_API_CONN;
 
 export default function FooterForm() {
     const [name, setName] = useState('');
@@ -9,7 +10,8 @@ export default function FooterForm() {
         <div className="bg-gray-300 py-5 flex flex-col justify-center">
             <form id="suggestion-form" onSubmit={(e) => {
                 e.preventDefault();
-                fetch('http://127.0.0.1:4000/api/v1/form-data', {
+                console.log(apiUrl);
+                fetch(apiUrl+'/api/v1/form-data', {
                     method:"POST",
                     headers: { "Content-Type": "application/json"},
                     body: JSON.stringify({name, suggestion})

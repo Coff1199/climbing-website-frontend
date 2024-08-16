@@ -4,6 +4,7 @@ import AddRoute from "../components/AddRoute";
 import EditRouteData from "../components/EditRouteData";
 import AddData from "../components/AddData";
 import DeleteRoute from "../components/DeleteRoute"
+const apiUrl = process.env.REACT_APP_API_CONN;
 
 export default function ClimbingRoutes() {
     const [listRoutes, setListRoutes] = useState([])
@@ -16,7 +17,7 @@ export default function ClimbingRoutes() {
           flashes: 0,
           sends: 0,
         }
-        fetch('http://127.0.0.1:4000/api/v1/climbing-routes', {
+        fetch(apiUrl+'/api/v1/climbing-routes', {
           method: 'POST',
           headers: { "Content-Type": "application/json"},
           body: JSON.stringify(newRoute)
@@ -27,7 +28,7 @@ export default function ClimbingRoutes() {
       }
 
       useEffect(() => {
-        fetch('http://127.0.0.1:4000/api/v1/climbing-routes')
+        fetch(apiUrl+'/api/v1/climbing-routes')
         .then((response) => {
           return response.json();
         })
@@ -40,7 +41,7 @@ export default function ClimbingRoutes() {
       }, [])
 
       function updateRoute(id, newName, newGrade, newSetter) {
-        fetch('http://127.0.0.1:4000/api/v1/climbing-routes/' + id, {
+        fetch(apiUrl+'/api/v1/climbing-routes/' + id, {
           method: 'PATCH',
           headers: { "Content-Type": "application/json"},
           body: JSON.stringify({name:newName, setter:newSetter, grade:newGrade})
@@ -59,7 +60,7 @@ export default function ClimbingRoutes() {
       }
 
       function updateData(id, flashes, sends) {
-        fetch('http://127.0.0.1:4000/api/v1/climbing-routes/' + id, {
+        fetch(apiUrl+'/api/v1/climbing-routes/' + id, {
           method: 'PATCH',
           headers: { "Content-Type": "application/json"},
           body: JSON.stringify({flashes:Number(flashes), sends: Number(sends)})
@@ -79,7 +80,7 @@ export default function ClimbingRoutes() {
       }
 
       function deleteRouteData(id, flashes, sends) {
-        fetch('http://127.0.0.1:4000/api/v1/climbing-routes/' + id, {
+        fetch(apiUrl+'/api/v1/climbing-routes/' + id, {
           method: 'DELETE',
         }).then(() => {
           console.log("Route with id "+ id + " deleted");

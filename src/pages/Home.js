@@ -3,7 +3,18 @@ import WideImageWindow from "../components/WideImageWindow";
 
 export default function Home() {
     return (
-        <>
+        <>  
+            <div className="space y-4">
+                <p>
+                    This website was created for learning purposes: see linked repositiories
+                </p>
+                <p>
+                    <a href="https://github.com/Coff1199/climbing-website-frontend">Frontend</a>
+                    </p>
+                <p>
+                    <a href="https://github.com/Coff1199/climbing-website-backend">Backend</a>
+                </p>
+            </div>
             <div className="flex min-h-screen">
                 <div className="flex flex-col w-1/3"> 
                     <ImageWindow 

@@ -37,7 +37,7 @@ export default function AddData(props) {
                     }}>
                         <div className="md:flex md:items-center mb-6">
                             <div className="md:w-1/3">
-                                <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="flashes">
+                                <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="flashes">
                                     Flashes to add
                                 </label>
                             </div>
@@ -55,7 +55,7 @@ export default function AddData(props) {
                         </div>
                         <div className="md:flex md:items-center mb-6">
                             <div className="md:w-1/3">
-                            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="sends">
+                            <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="sends">
                                 Sends to add
                             </label>
                             </div>

@@ -7,8 +7,8 @@ import FooterForm from './FooterForm';
 const navigation = [
   { name: 'Home', href: '/home' },
   { name: 'Routes', href: '/climbing-routes' },
-  { name: 'Projects', href: '/other' },
-  { name: 'Calendar', href: '/other2' },
+  //{ name: 'Projects', href: '/other' },
+  //{ name: 'Calendar', href: '/other2' },
 ]
 
 export default function Header(props) {

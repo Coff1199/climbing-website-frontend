@@ -27,7 +27,7 @@ export default function FooterForm() {
                     <div className="flex flex-col items-center mb-6"> 
                         <div>
                             <label 
-                                for="name"
+                                htmlFor="name"
                                 className="block text-gray-500 font-bold mb-1 md:mb-0 pr-4"
                             >
                                 Name 
@@ -45,7 +45,7 @@ export default function FooterForm() {
                         </div>
                         <div>
                             <label 
-                                for="suggestion-box"
+                                htmlFor="suggestion-box"
                                 className="block text-gray-500 font-bold mb-1 md:mb-0 pr-4"
                             >
                                 Issues/Suggestions 
